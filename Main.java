@@ -25,6 +25,9 @@ public class Main {
 		SIZE_10K(10_000),
 		SIZE_50K(50_000),
 		SIZE_100K(100_000),
+		SIZE_200K(200_000),
+		SIZE_300K(300_000),
+		SIZE_400K(400_000),
 		SIZE_500K(500_000),
 		SIZE_1M(1_000_000);
 
@@ -59,7 +62,7 @@ public class Main {
 		switch (algorithm) {
 			case ALGORITHM1:
 				return "BubbleSort";
-				case ALGORITHM2:
+			case ALGORITHM2:
 				return "InsertionSort";
 			default:
 				throw new IllegalArgumentException("Algorithm not found.");
@@ -74,7 +77,7 @@ public class Main {
 		double orderedTime;
 
 		if (algorithmType == TimeMeasurement.ALGORITHM1) {
-			InsertionSort algorithm = new InsertionSort();
+			BubbleSort algorithm = new BubbleSort();
 
 			long startRandom = System.nanoTime();
 			algorithm.sort(arr);
@@ -87,7 +90,7 @@ public class Main {
 			orderedTime = (endOrdered - startOrdered) / 1_000_000.0;
 		}
 		else {
-			BubbleSort algorithm = new BubbleSort();
+			InsertionSort algorithm = new InsertionSort();
 
 			long startRandom = System.nanoTime();
 			algorithm.sort(arr);
